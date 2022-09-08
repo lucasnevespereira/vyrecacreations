@@ -121,10 +121,28 @@ export default css.global`
   .product__info .name {
     font-weight: 400;
     color: #1d2025;
+    display: flex;
+    align-items: center;
   }
   .product__info .price {
     padding-top: 5px;
     color: #69b67c;
     font-weight: 400;
+  }
+
+  .product__info .price .sold {
+    text-decoration: line-through;
+  }
+
+  .product__info .sold {
+    color: #ff8ca1;
+    margin-left: 5px;
+  }
+
+  .soldout {
+    background: #ff8ca1;
+    color: white;
+    border-color: #ff8ca1;
+    pointer-events: none;
   }
 `;

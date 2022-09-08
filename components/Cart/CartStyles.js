@@ -8,6 +8,13 @@ export default css.global`
     z-index: 1000;
   }
 
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    align-items: center;
+  }
+
   .cart-icon {
     position: relative;
     margin-right: 15px;
@@ -83,5 +90,24 @@ export default css.global`
     width: auto;
     display: inline-block;
     padding: 15px 35px;
+  }
+
+  .subtotal {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .subtotal h3 {
+    font-weight: bolder;
+  }
+
+  .delete {
+    color: #ff5977;
+  }
+
+  .delete:hover {
+    cursor: pointer;
+    transform: scale(1.1);
   }
 `;

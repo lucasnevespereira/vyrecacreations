@@ -8,6 +8,10 @@ const initialState = {
   total_items: 0,
   total_unique_items: 0,
   line_items: [],
+  subtotal: {
+    formatted_with_symbol: "€0.00",
+    formatted_with_code: "0.00 EUR",
+  },
 };
 
 const reducer = (state, action) => {
