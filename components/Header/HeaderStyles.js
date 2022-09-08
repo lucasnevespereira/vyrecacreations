@@ -22,6 +22,7 @@ export default css.global`
     box-shadow: none;
     border-radius: 0;
     height: auto;
+    width: 100%;
   }
 
   img.logo {

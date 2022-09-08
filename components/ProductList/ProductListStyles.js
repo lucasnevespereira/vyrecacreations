@@ -6,6 +6,15 @@ export default css.global`
     width: 100%;
     max-width: 1280px;
   }
+
+  @media (max-width: 820px) {
+    .products {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+
   .product {
     margin: 10px auto 0;
     padding: 25px 20px;

@@ -1,4 +1,3 @@
-import React from "react";
 import Styles from "./HeaderStyles";
 
 export default function Header({ merchant }) {

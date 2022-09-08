@@ -11,9 +11,7 @@ export default css.global`
   }
 
   body {
-    text-align: center;
-    padding: 50px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif !important;
     text-shadow: 1px 1px 1px rgb(0 0 0 / 0%);
     color: #2c3e50;
   }
