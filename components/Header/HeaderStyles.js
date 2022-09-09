@@ -33,6 +33,10 @@ export default css.global`
     width: 80px;
   }
 
+  img.logo:hover {
+    cursor: pointer;
+  }
+
   .merchant-name {
     text-shadow: none;
     margin: 10px auto;

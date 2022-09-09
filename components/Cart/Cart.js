@@ -16,6 +16,7 @@ import {
 import { DeleteOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { useCartState, useCartDispatch } from "../../context/cart";
 import commerce from "../../lib/commerce";
+import { useRouter } from "next/router";
 
 function CartItem({ id, name, quantity, line_total }) {
   const { setCart } = useCartDispatch();
@@ -36,8 +37,14 @@ function CartItem({ id, name, quantity, line_total }) {
 export default function Cart() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
-  const { line_items, total_items, subtotal } = useCartState();
+  const { line_items, total_items, subtotal, hosted_checkout_url } =
+    useCartState();
   const isEmpty = line_items.length === 0;
+  const router = useRouter();
+
+  const goToCheckout = () => {
+    router.push(hosted_checkout_url);
+  };
 
   return (
     <>
@@ -90,7 +97,13 @@ export default function Cart() {
             <Button variant="outline" mr={3} onClick={onClose}>
               Continuer Achats
             </Button>
-            <Button colorScheme="green">Valider</Button>
+            <Button
+              colorScheme="green"
+              disabled={total_items === 0}
+              onClick={goToCheckout}
+            >
+              Valider
+            </Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
