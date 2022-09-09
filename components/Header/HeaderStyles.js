@@ -45,4 +45,11 @@ export default css.global`
     font-weight: 600;
     font-size: 24px;
   }
+
+  .email {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    z-index: 1000;
+  }
 `;
