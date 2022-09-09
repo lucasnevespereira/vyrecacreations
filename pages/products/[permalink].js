@@ -1,8 +1,7 @@
 import React from "react";
 import commerce from "../../lib/commerce";
 import Header from "../../components/Header/Header";
-import Link from "next/link";
-import { useCartDispatch } from "../../context/cart";
+import Product from "../../components/Product/Product";
 
 export async function getStaticProps({ params }) {
   const { permalink } = params;
@@ -33,20 +32,10 @@ export async function getStaticPaths() {
 }
 
 export default function ProductPage({ product, merchant }) {
-  const { setCart } = useCartDispatch();
-
-  const addToCart = () =>
-    commerce.cart.add(product.id).then((cart) => setCart(cart));
-
   return (
     <React.Fragment>
       <Header merchant={merchant[0]} />
-      <div>
-        <h1>{product.name}</h1>
-        <p>{product.price.formatted_with_symbol}</p>
-      </div>
-      <button onClick={addToCart}>Add to Cart</button>
-      <Link href={"/"}>Retourner</Link>
+      <Product {...product} />
     </React.Fragment>
   );
 }

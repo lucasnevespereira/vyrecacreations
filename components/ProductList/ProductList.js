@@ -2,7 +2,7 @@ import Link from "next/link";
 import Styles from "./ProductListStyles";
 import commerce from "../../lib/commerce";
 import { useCartDispatch, useCartState } from "../../context/cart";
-import { useToast } from "@chakra-ui/react";
+import { useToast, Button } from "@chakra-ui/react";
 
 export default function ProductList({ products }) {
   if (!products) return null;
@@ -39,17 +39,17 @@ export default function ProductList({ products }) {
               <div className="product__images">
                 <div className="hover-overlay">
                   <Link href={`/products/${product.permalink}`}>
-                    <a className="link learn-more">Détails Produit</a>
+                    <Button className="btn learn-more">Détails Produit</Button>
                   </Link>
                   {product.is.sold_out ? (
-                    <a className="link buy-now soldout">Vendu</a>
+                    <Button className="btn buy-now soldout">Vendu</Button>
                   ) : (
-                    <a
+                    <Button
                       onClick={() => addToCart(product.id)}
-                      className="link buy-now"
+                      className="btn buy-now"
                     >
                       Ajouter au panier
-                    </a>
+                    </Button>
                   )}
                 </div>
                 <img

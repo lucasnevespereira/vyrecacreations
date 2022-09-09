@@ -19,4 +19,7 @@ export default css.global`
   a:hover {
     cursor: pointer;
   }
+
+  .container {
+  }
 `;

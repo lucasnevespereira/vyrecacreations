@@ -2,6 +2,7 @@ import css from "styled-jsx/css";
 
 export default css.global`
   footer {
+    padding: 50px;
     height: 100px;
   }
 
@@ -18,7 +19,6 @@ export default css.global`
   }
 
   .insta:hover {
-    // transform: scale(1.1);
     opacity: 0.6;
   }
 

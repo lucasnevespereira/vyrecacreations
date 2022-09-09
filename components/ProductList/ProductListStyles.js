@@ -56,22 +56,15 @@ export default css.global`
     opacity: 1;
   }
 
-  .hover-overlay a {
+  .hover-overlay .btn {
     margin: 10px auto;
     width: 80%;
     border-radius: 3px;
     line-height: 30px;
     font-size: 16px;
     display: block;
-    padding: 15px 0;
     text-decoration: none;
     position: relative;
-  }
-
-  .learn-more {
-    color: #6c7c90;
-    text-shadow: 0 1px 3px rgb(0 0 0 / 15%);
-    border: 1px solid rgba(108, 124, 144, 0.45);
   }
 
   .buy-now {
@@ -119,7 +112,7 @@ export default css.global`
   }
 
   .product__info .name {
-    font-weight: 400;
+    font-weight: 600;
     color: #1d2025;
     display: flex;
     align-items: center;
@@ -127,7 +120,7 @@ export default css.global`
   .product__info .price {
     padding-top: 5px;
     color: #69b67c;
-    font-weight: 400;
+    font-weight: 600;
   }
 
   .product__info .price .sold {
