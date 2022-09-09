@@ -16,20 +16,18 @@ import {
 import { DeleteOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { useCartState, useCartDispatch } from "../../context/cart";
 import commerce from "../../lib/commerce";
-import Router from "next/router";
 
-function CartItem({ item }) {
+function CartItem({ id, name, quantity, line_total }) {
   const { setCart } = useCartDispatch();
-  const handleUpdateCart = ({ cart }) => {
-    setCart(cart);
-    Router.reload(window.location.pathname);
-  };
-  const removeItem = () => commerce.cart.remove(item.id).then(handleUpdateCart);
+
+  const handleUpdateCart = (cart) => setCart(cart);
+
+  const removeItem = () => commerce.cart.remove(id).then(handleUpdateCart);
   return (
     <div className="cart-item">
-      <span className="name">{item.product_name}</span>
-      <Badge className="qty">{item.quantity}</Badge>
-      <span className="price"> {item.price.formatted_with_symbol}</span>
+      <span className="name">{name}</span>
+      <Badge className="qty">{quantity}</Badge>
+      <span className="price"> {line_total.formatted_with_symbol}</span>
       <DeleteOutlined onClick={removeItem} className="delete" />
     </div>
   );
@@ -78,11 +76,7 @@ export default function Cart() {
               <div style={{ padding: "20px 0" }}>Le panier est vide!</div>
             ) : (
               line_items.map((item) => {
-                return (
-                  <>
-                    <CartItem item={item} key={item.id} />
-                  </>
-                );
+                return <CartItem key={item.id} {...item} />;
               })
             )}
             <Divider />

@@ -1,20 +1,35 @@
 import Link from "next/link";
 import Styles from "./ProductListStyles";
 import commerce from "../../lib/commerce";
-import { useCartDispatch } from "../../context/cart";
-import Router from "next/router";
+import { useCartDispatch, useCartState } from "../../context/cart";
+import { useToast } from "@chakra-ui/react";
 
 export default function ProductList({ products }) {
   if (!products) return null;
+  const { line_items } = useCartState();
   const { setCart } = useCartDispatch();
+  const toast = useToast();
 
-  const handleUpdateCart = ({ cart }) => {
-    setCart(cart);
-    Router.reload(window.location.pathname);
+  const handleUpdateCart = (cart) => setCart(cart);
+
+  const productInCart = (productId) =>
+    line_items.map((item) => {
+      return item.product_id === productId;
+    });
+
+  const addToCart = (productId) => {
+    if (productInCart(productId)[0]) {
+      toast({
+        title: "Ce produit est dans votre panier",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
+    } else {
+      commerce.cart.add(productId).then(handleUpdateCart);
+    }
   };
 
-  const addToCart = (productId) =>
-    commerce.cart.add(productId).then(handleUpdateCart);
   return (
     <div className="products">
       {products.map((product) => (
@@ -33,7 +48,7 @@ export default function ProductList({ products }) {
                       onClick={() => addToCart(product.id)}
                       className="link buy-now"
                     >
-                      Ajouter au Panier
+                      Ajouter au panier
                     </a>
                   )}
                 </div>
