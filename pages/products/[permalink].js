@@ -3,6 +3,19 @@ import commerce from "../../lib/commerce";
 import Header from "../../components/Header/Header";
 import Product from "../../components/Product/Product";
 
+export async function getStaticPaths() {
+  const { data: products } = await commerce.products.list();
+
+  return {
+    paths: products.map((product) => ({
+      params: {
+        permalink: product.permalink,
+      },
+    })),
+    fallback: false,
+  };
+}
+
 export async function getStaticProps({ params }) {
   const { permalink } = params;
   const { data: merchant } = await commerce.merchants.about();
@@ -15,19 +28,7 @@ export async function getStaticProps({ params }) {
       merchant,
       product,
     },
-  };
-}
-
-export async function getStaticPaths() {
-  const { data: products } = await commerce.products.list();
-
-  return {
-    paths: products.map((product) => ({
-      params: {
-        permalink: product.permalink,
-      },
-    })),
-    fallback: false,
+    revalidate: 1,
   };
 }
 

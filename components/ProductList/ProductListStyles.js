@@ -7,7 +7,7 @@ export default css.global`
     max-width: 1280px;
   }
 
-  @media (max-width: 820px) {
+  @media (max-width: 992px) {
     .products {
       display: flex;
       justify-content: center;
@@ -71,11 +71,11 @@ export default css.global`
     box-shadow: 0 1px 3px rgb(0 0 0 / 15%);
     border: 1px solid rgba(105, 182, 124, 0.5);
     color: white;
-    background: #8bc79a;
+    background: #8bc79a !important;
   }
 
   .buy-now:hover {
-    background: #69b67c;
+    background: #69b67c !important;
     color: white;
   }
 
@@ -133,7 +133,7 @@ export default css.global`
   }
 
   .soldout {
-    background: #ff8ca1;
+    background: #ff8ca1 !important;
     color: white;
     border-color: #ff8ca1;
     pointer-events: none;

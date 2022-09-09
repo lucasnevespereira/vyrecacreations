@@ -2,6 +2,7 @@ import css from "styled-jsx/css";
 
 export default css.global`
   #banner {
+    background-color: #efe9dd;
     width: 100%;
     max-width: 1280px;
     height: 400px;
@@ -23,6 +24,7 @@ export default css.global`
     border-radius: 0;
     height: auto;
     width: 100%;
+    background-color: #efe9dd;
   }
 
   img.logo {

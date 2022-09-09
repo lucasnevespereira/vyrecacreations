@@ -12,20 +12,20 @@ export default function ProductList({ products }) {
 
   const handleUpdateCart = (cart) => setCart(cart);
 
-  const productInCart = (productId) =>
-    line_items.map((item) => {
-      return item.product_id === productId;
-    });
-
   const addToCart = (productId) => {
-    if (productInCart(productId)[0]) {
-      toast({
-        title: "Ce produit est dans votre panier",
-        status: "success",
-        duration: 9000,
-        isClosable: true,
-      });
-    } else {
+    let productInCart = false;
+    line_items.map((item) => {
+      if (item.product_id === productId) {
+        toast({
+          title: "Ce produit est dans votre panier",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
+        productInCart = true;
+      }
+    });
+    if (!productInCart) {
       commerce.cart.add(productId).then(handleUpdateCart);
     }
   };
@@ -42,7 +42,7 @@ export default function ProductList({ products }) {
                     <Button className="btn learn-more">Détails Produit</Button>
                   </Link>
                   {product.is.sold_out ? (
-                    <Button className="btn buy-now soldout">Vendu</Button>
+                    <Button className="btn soldout">Vendu</Button>
                   ) : (
                     <Button
                       onClick={() => addToCart(product.id)}

@@ -18,22 +18,22 @@ export default function Product(product) {
   const { line_items } = useCartState();
   const { setCart } = useCartDispatch();
   const toast = useToast();
-
-  const productInCart = (productId) =>
-    line_items.map((item) => {
-      return item.product_id === productId;
-    });
-
+  const handleUpdateCart = (cart) => setCart(cart);
   const addToCart = () => {
-    if (productInCart(product.id)[0]) {
-      toast({
-        title: "Ce produit est dans votre panier",
-        status: "success",
-        duration: 9000,
-        isClosable: true,
-      });
-    } else {
-      commerce.cart.add(product.id).then((cart) => setCart(cart));
+    let productInCart = false;
+    line_items.map((item) => {
+      if (item.product_id === product.id) {
+        toast({
+          title: "Ce produit est dans votre panier",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
+        productInCart = true;
+      }
+    });
+    if (!productInCart) {
+      commerce.cart.add(product.id).then(handleUpdateCart);
     }
   };
   return (

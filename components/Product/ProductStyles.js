@@ -8,6 +8,7 @@ export default css.global`
     justify-content: space-around;
     align-content: center;
     flex-direction: row-reverse;
+    padding: 50px 0;
   }
 
   @media and (max-width: 767px) {
@@ -60,7 +61,6 @@ export default css.global`
     font-weight: 400;
     padding: 10px 15px;
     border-radius: 3px;
-    background-color: rgba(236, 241, 242, 0.9);
   }
 
   .product-add {
@@ -78,11 +78,11 @@ export default css.global`
     box-shadow: 0 1px 3px rgb(0 0 0 / 15%);
     border: 1px solid rgba(105, 182, 124, 0.5);
     color: white;
-    background: #8bc79a;
+    background: #8bc79a !important;
   }
 
   .buy-now:hover {
-    background: #69b67c;
+    background: #69b67c !important;
     color: white;
   }
 
