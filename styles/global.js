@@ -14,6 +14,7 @@ export default css.global`
     font-family: "Poppins", sans-serif !important;
     text-shadow: 1px 1px 1px rgb(0 0 0 / 0%);
     color: #2c3e50;
+    background-color: rgba(236, 241, 242, 0.35);
   }
 
   a:hover {
@@ -24,5 +25,19 @@ export default css.global`
     body {
       padding: 30px 0;
     }
+  }
+
+  .buy-now {
+    box-shadow: 0 1px 3px rgb(0 0 0 / 15%);
+    // border: 1px solid rgba(105, 182, 124, 0.5);
+    color: white;
+    // background: #8bc79a !important;
+    background: #b45a0c !important;
+  }
+
+  .buy-now:hover {
+    // background: #69b67c !important;
+    background: #844209 !important;
+    color: white;
   }
 `;

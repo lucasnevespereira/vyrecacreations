@@ -48,7 +48,7 @@ export default css.global`
   .product-price {
     font-size: 24px;
     font-weight: bold;
-    color: #8bc79a;
+    color: #69b67c;
   }
 
   .product-buy .sold {
@@ -72,18 +72,6 @@ export default css.global`
     color: white;
     border-color: #ff8ca1;
     pointer-events: none;
-  }
-
-  .buy-now {
-    box-shadow: 0 1px 3px rgb(0 0 0 / 15%);
-    border: 1px solid rgba(105, 182, 124, 0.5);
-    color: white;
-    background: #8bc79a !important;
-  }
-
-  .buy-now:hover {
-    background: #69b67c !important;
-    color: white;
   }
 
   .swiper {

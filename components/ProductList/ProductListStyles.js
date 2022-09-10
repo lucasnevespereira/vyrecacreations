@@ -37,6 +37,13 @@ export default css.global`
       white 25%,
       rgba(255, 255, 255, 0.85) 100%
     );
+
+    // background: radial-gradient(
+    //   ellipse at center,
+    //   white 25%,
+    //   rgba(239, 233, 221, 0.85) 100%
+    // );
+
     width: 100%;
     height: 100%;
     left: 0;
@@ -67,18 +74,6 @@ export default css.global`
     position: relative;
   }
 
-  .buy-now {
-    box-shadow: 0 1px 3px rgb(0 0 0 / 15%);
-    border: 1px solid rgba(105, 182, 124, 0.5);
-    color: white;
-    background: #8bc79a !important;
-  }
-
-  .buy-now:hover {
-    background: #69b67c !important;
-    color: white;
-  }
-
   .product__images {
     width: 385px;
     height: 281px;
@@ -87,7 +82,7 @@ export default css.global`
     text-align: center;
     position: relative;
     border-radius: 3px;
-    background-color: rgba(236, 241, 242, 0.35);
+    background-color: rgba(239, 233, 221, 0.85);
     padding: 10px;
     overflow: hidden;
     text-align: center;

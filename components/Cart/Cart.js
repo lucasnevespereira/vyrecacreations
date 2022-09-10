@@ -98,7 +98,7 @@ export default function Cart() {
               Continuer Achats
             </Button>
             <Button
-              colorScheme="green"
+              className="buy-now"
               disabled={total_items === 0}
               onClick={goToCheckout}
             >
