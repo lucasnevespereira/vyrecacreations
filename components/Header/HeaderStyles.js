@@ -2,29 +2,29 @@ import css from "styled-jsx/css";
 
 export default css.global`
   #banner {
-    background-color: #efe9dd;
     width: 100%;
     max-width: 1280px;
-    height: 400px;
+    height: 300px;
     margin: 0 auto;
     text-align: center;
-    background-color: white;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     border-radius: 3px;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 15%);
+    // box-shadow: 0 1px 3px rgb(0 0 0 / 15%);
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
     position: relative;
     box-sizing: border-box;
     padding: 50px 0;
   }
 
   #banner.no-cover {
+    background-image: none;
+    background-color: #efe9dd;
     box-shadow: none;
     border-radius: 0;
     height: auto;
     width: 100%;
-    background-color: #efe9dd;
   }
 
   img.logo {
@@ -46,12 +46,10 @@ export default css.global`
     z-index: 1;
     font-weight: 600;
     font-size: 24px;
+    color: #edf2f7;
   }
 
-  .email {
-    position: fixed;
-    top: 10px;
-    left: 20px;
-    z-index: 1000;
+  #banner.nocover .merchant-name {
+    color: #2c3e50;
   }
 `;

@@ -19,4 +19,10 @@ export default css.global`
   a:hover {
     cursor: pointer;
   }
+
+  @media and (min-width: 992px) {
+    body {
+      padding: 30px 0;
+    }
+  }
 `;

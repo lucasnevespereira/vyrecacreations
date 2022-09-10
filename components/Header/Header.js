@@ -1,7 +1,7 @@
 import Styles from "./HeaderStyles";
 import Link from "next/link";
 import { MailOutlined } from "@ant-design/icons";
-import { Button } from "@chakra-ui/react";
+import { background, Button } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
 export default function Header({ merchant }) {
@@ -10,7 +10,15 @@ export default function Header({ merchant }) {
     router.push("mailto:vyrecacreations@gmail.com");
   };
   return (
-    <header id="banner" className="no-cover">
+    <header
+      id="banner"
+      className={!merchant.has.cover && "no-cover"}
+      style={{
+        backgroundImage: merchant.has.cover
+          ? `url('${merchant.images.cover.url}')`
+          : "none",
+      }}
+    >
       <Link href={"/"}>
         <img src={merchant.images.logo.url} alt="logo" className="logo" />
       </Link>
