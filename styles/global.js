@@ -29,14 +29,11 @@ export default css.global`
 
   .buy-now {
     box-shadow: 0 1px 3px rgb(0 0 0 / 15%);
-    // border: 1px solid rgba(105, 182, 124, 0.5);
     color: white;
-    // background: #8bc79a !important;
     background: #b45a0c !important;
   }
 
   .buy-now:hover {
-    // background: #69b67c !important;
     background: #844209 !important;
     color: white;
   }
