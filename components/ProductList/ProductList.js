@@ -53,16 +53,9 @@ export default function ProductList({ products }) {
                   )}
                 </div>
                 {product.image ? (
-                  <img
-                    src={product.image.url}
-                    className="product"
-                    alt="product image main"
-                  />
+                  <img src={product.image.url} alt="product-image" />
                 ) : (
-                  <div
-                    className="product"
-                    style={{ backgroundColor: "#efe9dd" }}
-                  ></div>
+                  <div style={{ backgroundColor: "#efe9dd" }}></div>
                 )}
               </div>
               <div className="product__info">

@@ -37,13 +37,6 @@ export default css.global`
       white 25%,
       rgba(255, 255, 255, 0.85) 100%
     );
-
-    // background: radial-gradient(
-    //   ellipse at center,
-    //   white 25%,
-    //   rgba(239, 233, 221, 0.85) 100%
-    // );
-
     width: 100%;
     height: 100%;
     left: 0;
