@@ -1,3 +1,3 @@
 # vyrecacreations
 
-Vyreca Creations Shop
+Vyreca Creations Shop built with Next.js and Commerce.js
