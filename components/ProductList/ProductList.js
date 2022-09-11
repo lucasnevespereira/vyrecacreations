@@ -52,11 +52,13 @@ export default function ProductList({ products }) {
                     </Button>
                   )}
                 </div>
-                <img
-                  src={product.image.url}
-                  className="product__image__main"
-                  alt="product image main"
-                />
+                {product.image.url && (
+                  <img
+                    src={product.image.url}
+                    className="product"
+                    alt="product image main"
+                  />
+                )}
               </div>
               <div className="product__info">
                 <div className="name">
