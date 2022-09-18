@@ -11,7 +11,7 @@ export async function getStaticProps() {
       merchant,
       products,
     },
-    revalidate: 60,
+    revalidate: 10,
   };
 }
 

@@ -41,7 +41,7 @@ export const CartProvider = ({ children }) => {
 
       setCart(cart);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 

@@ -92,6 +92,7 @@ export default css.global`
   .swiper-slide img {
     object-fit: cover;
     height: 100%;
+    width: 100%;
   }
   .swiper-button-next,
   .swiper-button-prev {

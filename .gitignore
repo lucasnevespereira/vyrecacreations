@@ -3,4 +3,5 @@ node_modules/
 .idea
 .env
 .next
+_next
 .DS_Store

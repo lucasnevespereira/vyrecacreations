@@ -13,7 +13,8 @@ import { useCartDispatch, useCartState } from "../../context/cart";
 import { useToast } from "@chakra-ui/react";
 import commerce from "../../lib/commerce";
 
-export default function Product({product}) {
+export default function Product({ product }) {
+  if (!product) return null;
   const router = useRouter();
   const { line_items } = useCartState();
   const { setCart } = useCartDispatch();

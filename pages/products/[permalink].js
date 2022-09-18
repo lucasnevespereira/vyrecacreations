@@ -5,7 +5,6 @@ import Product from "../../components/Product/Product";
 
 export async function getStaticPaths() {
   const { data: products } = await commerce.products.list();
-
   return {
     paths: products.map((product) => ({
       params: {
@@ -22,13 +21,12 @@ export async function getStaticProps({ params }) {
   const product = await commerce.products.retrieve(permalink, {
     type: "permalink",
   });
-
   return {
     props: {
       merchant,
       product,
     },
-    revalidate: 60,
+    revalidate: 10,
   };
 }
 

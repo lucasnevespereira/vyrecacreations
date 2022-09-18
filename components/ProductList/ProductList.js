@@ -32,43 +32,44 @@ export default function ProductList({ products }) {
 
   return (
     <div className="products">
-      {products.map((product) => (
-        <div className="product" key={product.id}>
+      {products.map(({ permalink, id, is, image, name, price }) => (
+        <div className="product" key={id}>
           <div className="product__overlay">
             <div className="product__contents">
               <div className="product__images">
                 <div className="hover-overlay">
-                  <Link href={`/products/${product.permalink}`} passHref>
+                  <Link
+                    href={`/products/${permalink}`}
+                    as={`/products/${permalink}`}
+                  >
                     <Button className="btn learn-more">Détails Produit</Button>
                   </Link>
-                  {product.is.sold_out ? (
+                  {is.sold_out ? (
                     <Button className="btn soldout">Vendu</Button>
                   ) : (
                     <Button
-                      onClick={() => addToCart(product.id)}
+                      onClick={() => addToCart(id)}
                       className="btn buy-now"
                     >
                       Ajouter au panier
                     </Button>
                   )}
                 </div>
-                {product.image ? (
-                  <img src={product.image.url} alt="product-image" />
+                {image ? (
+                  <img src={image.url} alt="product-image" />
                 ) : (
                   <div style={{ backgroundColor: "#efe9dd" }}></div>
                 )}
               </div>
               <div className="product__info">
                 <div className="name">
-                  <p>{product.name}</p>
-                  {product.is.sold_out && (
-                    <small className="sold">(Vendu)</small>
-                  )}
+                  <p>{name}</p>
+                  {is.sold_out && <small className="sold">(Vendu)</small>}
                 </div>
 
                 <div className="price">
-                  <p className={product.is.sold_out && "sold"}>
-                    {product.price.formatted_with_symbol}
+                  <p className={is.sold_out && "sold"}>
+                    {price.formatted_with_symbol}
                   </p>
                 </div>
               </div>
