@@ -38,7 +38,7 @@ export default function ProductList({ products }) {
             <div className="product__contents">
               <div className="product__images">
                 <div className="hover-overlay">
-                  <Link href={`/products/${product.permalink}`}>
+                  <Link href={`/products/${product.permalink}`} passHref>
                     <Button className="btn learn-more">Détails Produit</Button>
                   </Link>
                   {product.is.sold_out ? (
