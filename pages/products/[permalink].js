@@ -12,7 +12,6 @@ export async function getStaticPaths() {
         permalink: product.permalink,
       },
     })),
-    fallback: false,
   };
 }
 
