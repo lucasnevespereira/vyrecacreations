@@ -36,7 +36,7 @@ export default function ProductPage({ product, merchant }) {
   return (
     <React.Fragment>
       <Header merchant={merchant[0]} />
-      <Product {...product} />
+      <Product product={product} />
     </React.Fragment>
   );
 }
