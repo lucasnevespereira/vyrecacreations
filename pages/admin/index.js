@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Spinner, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 const adminStyles = `
 .title {
@@ -33,7 +34,6 @@ const adminStyles = `
 .done-txt {
   text-align: center;
 }
-
 `;
 
 export default function AdminPage() {
@@ -79,6 +79,9 @@ export default function AdminPage() {
             </div>
           )}
         </div>
+        <a style={{ display: "flex", justifyContent: "center" }} href="/">
+          Retourner sur vyrecacreations.fr
+        </a>
       </>
       <style jsx>{adminStyles}</style>
     </React.Fragment>
